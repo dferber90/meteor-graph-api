@@ -3,7 +3,7 @@
 /* global
 	HTTPResponse: true,
 	_: false,
-	Graph: true,
+	GraphAPI: true,
 	Meteor: false,
 	HTTP: false
 */

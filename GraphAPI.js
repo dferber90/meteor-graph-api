@@ -1,1 +1,1 @@
-GraphAPI = null;
+GraphAPI = {};
