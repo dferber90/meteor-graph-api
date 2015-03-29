@@ -13,5 +13,5 @@ Package.onUse(function(api) {
 	api.use(['underscore', 'http'], 'server');
 	api.addFiles(['graph.js'], 'server');
 
-	api.export('Graph', 'server');
+	api.export('GraphAPI', 'server');
 });
