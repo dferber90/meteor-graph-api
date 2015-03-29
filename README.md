@@ -5,14 +5,11 @@ This package allows you to conveniently use [The Graph API](https://developers.f
 
 ## Quickstart
 
-To get started, simply provide your credentials, like this:
+To get started simply create a new instance like this:
 
 ```js
 
-facebook = new GraphAPI({
-	appId: <your apps id>,
-	secret: <your apps secret>
-});
+facebook = new GraphAPI();
 
 ```
 
@@ -24,6 +21,31 @@ For example, you can get a users profile picture whose Facebook User Id is store
 ```js
 
 var profilePictureUrl = facebook.getProfilePictureUrl(fbUserId);
+
+```
+
+
+## Using credentials
+
+There are [different types of access tokens](https://developers.facebook.com/docs/facebook-login/access-tokens) for Facebook.
+Here, you see how to use a Page Access Token.
+
+```js
+
+facebook = new GraphAPI({
+	appId: <your apps id>,
+	secret: <your apps secret>
+});
+
+```
+
+## Choosing a Graph API version
+
+```js
+
+facebook = new GraphAPI({
+	version: 'v2.2'
+});
 
 ```
 

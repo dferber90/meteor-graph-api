@@ -22,8 +22,12 @@ HTTPResponse.prototype = {
 
 
 GraphAPI = function (data) {
-	this.appId = data.appId;
-	this.secret = data.secret;
+
+	if (data.appId && data.secret) {
+		this.appId = data.appId;
+		this.secret = data.secret;
+		this._accessToken = [this.appId, this.secret].join('|');
+	}
 
 	// TODO support other types of access tokens
 	// and also enable no access token at all,
@@ -35,10 +39,6 @@ GraphAPI = function (data) {
 };
 
 _.extend(GraphAPI.prototype, {
-
-	_getAccessToken: function () {
-		return [this.appId, this.secret].join('|');
-	},
 	
 	_call: function (method, edge, params) {
 
