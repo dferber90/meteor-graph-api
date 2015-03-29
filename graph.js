@@ -24,16 +24,20 @@ HTTPResponse.prototype = {
 GraphAPI = function (data) {
 	this.appId = data.appId;
 	this.secret = data.secret;
+
+	// TODO support other types of access tokens
+	// and also enable no access token at all,
+	// because some edges support that.
+
+	this.version = data.version || 'v2.2';
+	this.baseUrl = data.baseUrl || 'https://graph.facebook.com/';
+	this.baseUrl += this.version;
 };
 
 _.extend(GraphAPI.prototype, {
-	baseUrl: 'https://graph.facebook.com/v2.2',
 
 	_getAccessToken: function () {
-		var appId = Meteor.settings.public.services.facebook.appId;
-		var secret = Meteor.settings.services.facebook.secret;
-
-		return [appId, secret].join('|');
+		return [this.appId, this.secret].join('|');
 	},
 	
 	_call: function (method, edge, params) {
@@ -102,10 +106,5 @@ _.extend(GraphAPI.prototype, {
 		});
 
 		return response.ok() ? response.data.data.url : false;
-	}/*,
-
-	getEvent: function (eventId, pageAccessToken) {
-		var response = this.get(['']);
 	}
-	*/
 });
