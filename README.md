@@ -7,7 +7,7 @@ This package allows you to conveniently use [The Graph API](https://developers.f
 
 To get started, simply provide your credentials, like this:
 
-```
+```js
 
 facebook = new GraphAPI({
 	appId: <your apps id>,
@@ -19,7 +19,7 @@ facebook = new GraphAPI({
 Now, you can use the new variable to make requests to the Graph API.
 For example, you can get a users profile picture like this:
 
-```
+```js
 
 var profilePictureUrl = facebook.getProfilePictureUrl(<fbUserId>);
 
@@ -33,7 +33,7 @@ Simply extend the GraphAPI prototype with your desired capability.
 
 The `getProfilePictureUrl` is implemented like this:
 
-```
+```js
 
 GraphAPI.prototype.getProfilePictureUrl = function (userId) {
 	var response = this.get([userId, 'picture'], {
