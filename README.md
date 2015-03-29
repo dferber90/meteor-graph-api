@@ -16,12 +16,14 @@ facebook = new GraphAPI({
 
 ```
 
+Since this core package contains no default functionality, you will have to add a package providing some actual functions.
+For exapmle `meteor add dferber:graph-api-get-profile-picture-url`.
 Now, you can use the new variable to make requests to the Graph API.
-For example, you can get a users profile picture like this:
+For example, you can get a users profile picture whose Facebook User Id is stored in `fbUserId` like this:
 
 ```js
 
-var profilePictureUrl = facebook.getProfilePictureUrl(<fbUserId>);
+var profilePictureUrl = facebook.getProfilePictureUrl(fbUserId);
 
 ```
 
@@ -31,24 +33,15 @@ var profilePictureUrl = facebook.getProfilePictureUrl(<fbUserId>);
 This package is written in a way that lets you easily extend its funcitonality.
 Simply extend the GraphAPI prototype with your desired capability.
 
-The `getProfilePictureUrl` is implemented like this:
-
-```js
-
-GraphAPI.prototype.getProfilePictureUrl = function (userId) {
-	var response = this.get([userId, 'picture'], {
-		redirect: false
-	});
-
-	return response.ok() ? response.data.data.url : false;
-};
-
-```
-
-Here, `this.get` starts a new HTTP GET request to the Graph API.
-The first parameter is an array which will be transformed into the Graph API edge.
-For example `[userId, 'picture']` will be transforemd to `/<userId>/picture`, so
-the request will be made to `https://graph.facebook.com/v2.2/<userId>/picture`.
+See [the getProfilePictureUrl package](https://github.com/dferber90/meteor-graph-api)
+for an example on how to do it.
 
 
+## Existing extensions
 
+This is a list of existing extensions of this Graph API package.
+If you created your own and you published it to atmosphere - and you should ;) - then
+simply create a PR for this README.md and add your package below.
+
+
+* [dferber:graph-api-get-profile-picture-url](https://github.com/dferber90/meteor-graph-api-get-profile-picture-url)
