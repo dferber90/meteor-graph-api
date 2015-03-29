@@ -1,5 +1,5 @@
 Package.describe({
-	name: 'dferber:facebook-api',
+	name: 'dferber:graph-api',
 	version: '0.0.1',
 	summary: 'Conveniently use Facebook Graph API on the server.',
 	git: 'https://github.com/dferber90/meteor-graph-api',
