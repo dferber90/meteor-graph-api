@@ -55,7 +55,7 @@ facebook = new GraphAPI({
 This package is written in a way that lets you easily extend its funcitonality.
 Simply extend the GraphAPI prototype with your desired capability.
 
-See [the getProfilePictureUrl package](https://github.com/dferber90/meteor-graph-api)
+See [the getProfilePictureUrl package](https://github.com/dferber90/meteor-graph-api-get-profile-picture-url)
 for an example on how to do it.
 
 
