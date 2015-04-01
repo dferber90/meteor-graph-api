@@ -35,7 +35,6 @@ GraphAPI = function (data) {
 
 	this.version = data && data.version || 'v2.2';
 	this.baseUrl = data && data.baseUrl || 'https://graph.facebook.com/';
-	this.baseUrl += this.version;
 };
 
 _.extend(GraphAPI.prototype, {
@@ -47,7 +46,7 @@ _.extend(GraphAPI.prototype, {
 
 		// add baseUrl in front
 		// [userId, 'pages'] => [this.baseUrl, userId, 'pages']
-		edgeArray.unshift(this.baseUrl);
+		edgeArray.unshift(this.baseUrl, this.version);
 
 		// [userId, 'pages'] => 'userId/pages'
 		return edgeArray.join('/');	
