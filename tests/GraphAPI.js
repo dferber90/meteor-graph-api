@@ -54,4 +54,16 @@ describe('GraphAPI', function() {
 
 		});
 	});
+
+	describe('HTTPResponse', function() {
+		it('should be ok if statusCode is 200', function() {
+			var h = new HTTPResponse({statusCode: 200});
+			expect(h.ok()).to.be['true'];
+		});
+
+		it('should not be ok if statusCode is not 200', function() {
+			var h = new HTTPResponse({statusCode: 201});
+			expect(h.ok()).to.be['false'];
+		});
+	});
 });
