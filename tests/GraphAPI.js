@@ -18,7 +18,7 @@ describe('GraphAPI', function() {
 
 				it('should not modify the original array', function() {
 					facebook._getEdgePath(edgeArray);
-					expect(edgeArray.length).to.be(2);
+					expect(edgeArray.length).to.equal(2);
 				});
 			});
 
