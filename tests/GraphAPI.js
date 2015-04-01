@@ -6,7 +6,6 @@ describe('GraphAPI', function() {
 
 			var facebook;
 			var edgeArray = ['me', 'picture'];
-			var baseUrl = new GraphAPI().baseUrl;
 
 			before(function () {
 				facebook = new GraphAPI();

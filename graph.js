@@ -43,7 +43,7 @@ _.extend(GraphAPI.prototype, {
 	_getEdgePath: function (edge) {
 
 		// enable edge to be defined as array
-		var edgeArray = _.isArray(edge) ? edge : [edge];
+		var edgeArray = _.isArray(edge) ? _.clone(edge) : [edge];
 
 		// add baseUrl in front
 		// [userId, 'pages'] => [this.baseUrl, userId, 'pages']
