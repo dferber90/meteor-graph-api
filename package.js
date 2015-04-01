@@ -15,3 +15,20 @@ Package.onUse(function(api) {
 
 	api.export(['GraphAPI', 'HTTPResponse'], 'server');
 });
+
+
+/*
+	Run tests with
+		meteor test-packages --driver-package respondly:test-reporter
+
+	More information:
+		https://blog.respond.ly/testing-meteor-packages-with-mocha/
+ */
+Package.onTest(function(api){
+	api.use(['mike:mocha-package', 'practicalmeteor:chai']);
+
+	api.use(['underscore', 'http'], 'server');
+	api.use(['dferber:graph-api'], 'server');
+
+	api.addFiles('tests/GraphAPI.js', ['server']);
+});
