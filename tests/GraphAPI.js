@@ -2,6 +2,30 @@
 
 describe('GraphAPI', function() {
 	describe('Core', function() {
+
+		describe('Constructor', function() {
+			
+			it('should respect version', function() {
+				var version = 'v1.0';
+				var facebook = new GraphAPI({
+					version: version
+				});
+
+				expect(facebook.version).to.equal(version);
+			});
+
+			it('should respect baseUrl', function() {
+				var baseUrl = 'http://google.de/';
+
+				var facebook = new GraphAPI({
+					baseUrl: baseUrl
+				});
+
+				expect(facebook.baseUrl).to.equal(baseUrl);
+			});
+
+		});
+
 		describe('_getEdgePath', function() {
 
 			var facebook;
