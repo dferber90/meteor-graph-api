@@ -11,7 +11,7 @@ Package.onUse(function(api) {
 	
 	api.versionsFrom('1.0.3.2');
 	api.use(['underscore', 'http'], 'server');
-	api.addFiles(['GraphAPI.js', 'graph.js'], 'server');
+	api.addFiles(['exports.js', 'graph.js'], 'server');
 
 	api.export('GraphAPI', 'server');
 });
