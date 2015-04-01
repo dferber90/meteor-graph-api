@@ -16,6 +16,6 @@ Package.onUse(function(api) {
 	api.export('GraphAPI', 'server');
 });
 
-Package.onTest(function () {
+Package.onTest(function (api) {
 	api.export('HTTPResponse', 'server');
 });
