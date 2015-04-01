@@ -34,7 +34,7 @@ GraphAPI = function (data) {
 	// because some edges support that.
 
 	this.version = data && data.version || 'v2.2';
-	this.baseUrl = data && data.baseUrl || 'https://graph.facebook.com/';
+	this.baseUrl = data && data.baseUrl || 'https://graph.facebook.com';
 };
 
 _.extend(GraphAPI.prototype, {

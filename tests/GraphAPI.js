@@ -15,7 +15,7 @@ describe('GraphAPI', function() {
 			});
 
 			it('should respect baseUrl', function() {
-				var baseUrl = 'http://google.de/';
+				var baseUrl = 'http://google.de';
 
 				var facebook = new GraphAPI({
 					baseUrl: baseUrl
