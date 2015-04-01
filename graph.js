@@ -39,8 +39,8 @@ GraphAPI = function (data) {
 };
 
 _.extend(GraphAPI.prototype, {
-	
-	_call: function (method, edge, params) {
+
+	_getEdgePath: function (edge) {
 
 		// enable edge to be defined as array
 		var edgeArray = _.isArray(edge) ? edge : [edge];
@@ -50,7 +50,13 @@ _.extend(GraphAPI.prototype, {
 		edgeArray.unshift(this.baseUrl);
 
 		// [userId, 'pages'] => 'userId/pages'
-		var edgePath = edgeArray.join('/');
+		return edgeArray.join('/');	
+		
+	},
+	
+	_call: function (method, edge, params) {
+
+		var edgePath = this._getEdgePath(edge);
 
 		return new HTTPResponse(HTTP.call(method, edgePath, {
 			params: params
