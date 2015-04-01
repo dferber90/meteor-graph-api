@@ -23,7 +23,7 @@ HTTPResponse.prototype = {
 
 GraphAPI = function (data) {
 
-	if (data.appId && data.secret) {
+	if (data && data.appId && data.secret) {
 		this.appId = data.appId;
 		this.secret = data.secret;
 		this._accessToken = [this.appId, this.secret].join('|');
