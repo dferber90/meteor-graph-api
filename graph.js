@@ -7,7 +7,7 @@
 	Meteor: false,
 	HTTP: false
 */
-var HTTPResponse = function (response) {
+HTTPResponse = function (response) {
 	_.extend(this, response);
 };
 
