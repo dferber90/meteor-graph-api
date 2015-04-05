@@ -14,13 +14,16 @@ facebook = new GraphAPI();
 ```
 
 Since this core package contains no default functionality, you will have to add a package providing some actual methods.
-For example `meteor add dferber:graph-api-get-profile-picture-url`.
+For example `meteor add dferber:graph-api-get-profile-picture`.
 Now, you can use the instance to make requests to the Graph API.
 For example, you can get a users profile picture whose Facebook User Id is stored in `fbUserId` like this:
 
 ```js
 
-var profilePictureUrl = facebook.getProfilePictureUrl(fbUserId);
+var profilePicture = facebook.getProfilePicture(fbUserId);
+
+if (profilePicture)
+	console.log(profilePicture.url);
 
 ```
 
@@ -30,7 +33,7 @@ var profilePictureUrl = facebook.getProfilePictureUrl(fbUserId);
 There are [different types of access tokens](https://developers.facebook.com/docs/facebook-login/access-tokens) for Facebook.
 Some edges of the Graph API do not require any access token.
 
-Here, you see how to use a App Access Token.
+Here, you see how to use an App Access Token.
 Other types of tokens are not implemented yet. Send a PR if you need one.
 
 ```js
@@ -59,7 +62,7 @@ This package is written in a way that lets you easily extend its funcitonality.
 The idea is that there will be lots of packages for commonly used tasks.
 Simply extend the GraphAPI prototype with your desired capability.
 
-See [the getProfilePictureUrl package](https://github.com/dferber90/meteor-graph-api-get-profile-picture-url)
+See [the getProfilePictureUrl package](https://github.com/dferber90/meteor-graph-api-get-profile-picture)
 for an example on how to do it.
 
 
@@ -70,7 +73,7 @@ If you created your own and you published it to atmosphere - and you should ;) -
 simply create a PR for this README.md and add your package below.
 
 
-* [dferber:graph-api-get-profile-picture-url](https://github.com/dferber90/meteor-graph-api-get-profile-picture-url)
+* [dferber:graph-api-get-profile-picture](https://github.com/dferber90/meteor-graph-api-get-profile-picture)
 
 
 
